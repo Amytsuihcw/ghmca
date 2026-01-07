@@ -5,6 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // GitHub Pages / 子目錄部署：使用相對 base，避免 /assets、/favicon.ico 指向網域根目錄
+  base: "./",
   server: {
     host: "::",
     port: 8080,
