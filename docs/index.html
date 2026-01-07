@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>全球健康音樂慈善總會</title>
+    <meta name="description" content="全球健康音樂慈善總會 - 以音樂為引，服務社會為本的非牟利慈善組織" />
+    <meta name="author" content="全球健康音樂慈善總會" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:title" content="全球健康音樂慈善總會" />
+    <meta property="og:description" content="以音樂為引，服務社會為本的非牟利慈善組織" />
+    <meta property="og:type" content="website" />
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600&display=swap');
+
+      :root {
+        --background: 45 30% 98%;
+        --foreground: 220 30% 15%;
+        --muted-foreground: 220 15% 45%;
+        --primary: 38 70% 45%;
+        --card: 0 0% 100%;
+        --border: 38 30% 88%;
+        --radius: 18px;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Noto Sans TC", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        color: hsl(var(--foreground));
+        background: linear-gradient(
+          180deg,
+          hsl(45 30% 98%) 0%,
+          hsl(38 40% 95%) 50%,
+          hsl(45 30% 98%) 100%
+        );
+      }
+
+      h1, h2, h3 { font-family: "Noto Serif TC", serif; margin: 0; }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .notes {
+        position: absolute;
+        inset: 0;
+        opacity: 0.08;
+        pointer-events: none;
+      }
+
+      .note {
+        position: absolute;
+        font-family: "Noto Serif TC", serif;
+        color: hsl(var(--foreground));
+        animation: float 8s ease-in-out infinite;
+      }
+
+      .note.n1 { top: 12%; left: 6%; font-size: 84px; animation-delay: 0s; }
+      .note.n2 { top: 18%; right: 10%; font-size: 64px; animation-delay: 1.2s; }
+      .note.n3 { bottom: 20%; left: 22%; font-size: 72px; animation-delay: 2.1s; }
+      .note.n4 { bottom: 14%; right: 26%; font-size: 54px; animation-delay: 0.6s; }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-14px); }
+      }
+
+      .hero {
+        text-align: center;
+        padding: 96px 0;
+      }
+
+      .badge {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 22px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        background: hsl(var(--primary) / 0.1);
+        border: 1px solid hsl(var(--border));
+      }
+
+      .badge svg { width: 36px; height: 36px; fill: none; stroke: hsl(var(--primary)); stroke-width: 1.8; }
+
+      .hero h1 {
+        font-size: clamp(36px, 4.6vw, 72px);
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+      }
+
+      .hero .en {
+        margin-top: 14px;
+        font-size: clamp(16px, 2.1vw, 24px);
+        color: hsl(var(--muted-foreground));
+        font-weight: 300;
+      }
+
+      .divider {
+        width: 140px;
+        height: 2px;
+        margin: 28px auto 0;
+        background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+      }
+
+      .tagline {
+        margin: 28px auto 0;
+        max-width: 720px;
+        font-size: 18px;
+        color: hsl(var(--muted-foreground));
+      }
+
+      main { padding: 0 0 72px; }
+
+      .section {
+        padding: 64px 0;
+      }
+
+      .card {
+        background: hsl(var(--card));
+        border: 1px solid hsl(var(--border));
+        border-radius: var(--radius);
+        padding: 26px;
+        box-shadow: 0 10px 40px -10px hsl(38 70% 45% / 0.12);
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      @media (min-width: 900px) {
+        .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+      }
+
+      .kicker {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        border: 1px solid hsl(var(--border));
+        background: hsl(var(--primary) / 0.06);
+        color: hsl(var(--foreground));
+        font-size: 14px;
+        letter-spacing: 0.06em;
+      }
+
+      .section h2 {
+        margin-top: 12px;
+        font-size: 34px;
+      }
+
+      .lead {
+        margin-top: 12px;
+        color: hsl(var(--muted-foreground));
+        line-height: 1.8;
+        font-size: 18px;
+      }
+
+      .value h3 { font-size: 22px; margin-bottom: 6px; color: hsl(var(--primary)); }
+      .value p { margin: 0; color: hsl(var(--muted-foreground)); line-height: 1.7; }
+
+      footer {
+        border-top: 1px solid hsl(var(--border));
+        padding: 22px 0;
+        color: hsl(var(--muted-foreground));
+        text-align: center;
+        font-size: 14px;
+      }
+
+      a { color: hsl(var(--primary)); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="notes" aria-hidden="true">
+        <div class="note n1">♪</div>
+        <div class="note n2">♫</div>
+        <div class="note n3">♩</div>
+        <div class="note n4">♬</div>
+      </div>
+
+      <div class="container hero">
+        <div class="badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 18V6l12-2v12" />
+            <circle cx="7" cy="18" r="2" />
+            <circle cx="19" cy="16" r="2" />
+          </svg>
+        </div>
+
+        <h1>全球健康音樂慈善總會</h1>
+        <div class="en">Global Health Music Charity Association</div>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="tagline">以音樂為引，服務社會為本</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <span class="kicker">使命</span>
+          <h2>以音樂療癒，促進身心健康</h2>
+          <p class="lead">
+            透過音樂的療癒力量，促進全球社區的身心健康與福祉。我們致力於將音樂帶入醫療機構、安老院舍及弱勢社群，
+            以專業的音樂治療服務，為有需要的人士帶來希望與慰藉。
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <span class="kicker">願景與核心價值</span>
+          <h2>讓每一個生命都感受到音樂的溫暖</h2>
+          <p class="lead">成為全球領先的音樂慈善組織，讓音樂成為連結人心、療癒心靈的橋樑。</p>
+
+          <div class="grid cols-3" style="margin-top: 18px;">
+            <div class="card value">
+              <h3>仁愛</h3>
+              <p>以愛心關懷每一位服務對象</p>
+            </div>
+            <div class="card value">
+              <h3>專業</h3>
+              <p>堅持專業音樂治療標準</p>
+            </div>
+            <div class="card value">
+              <h3>共融</h3>
+              <p>促進社會各階層的和諧共處</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <span class="kicker">成立宗旨</span>
+          <h2>以音為引，服務社會</h2>
+          <div class="card" style="margin-top: 14px;">
+            <p class="lead" style="margin: 0;">
+              全球健康音樂慈善總會於2024年由黃騫緯博士及鍾麗裳博士共同創立，秉承「以音樂為引，服務社會為本」的理念，致力於：
+            </p>
+            <ul style="margin: 14px 0 0; padding-left: 18px; color: hsl(var(--muted-foreground)); line-height: 1.9;">
+              <li>推廣音樂治療，提升公眾對音樂療癒力量的認識</li>
+              <li>為長者、病患及弱勢社群提供免費音樂服務</li>
+              <li>培育音樂治療專業人才，推動行業發展</li>
+              <li>聯繫全球音樂慈善力量，共建關愛社區</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <span class="kicker">創會成員</span>
+          <h2>創會成員</h2>
+          <div class="grid cols-2" style="margin-top: 14px;">
+            <div class="card">
+              <h3 style="margin:0; font-size:22px;">黃騫緯博士</h3>
+              <div style="margin-top:6px; color:hsl(var(--muted-foreground));">Dr. Wong Hin Wai</div>
+              <div style="margin-top:10px; color:hsl(var(--primary)); font-weight:600;">創會會長</div>
+            </div>
+            <div class="card">
+              <h3 style="margin:0; font-size:22px;">鍾麗裳博士</h3>
+              <div style="margin-top:6px; color:hsl(var(--muted-foreground));">Dr. Chung Lai Sheung</div>
+              <div style="margin-top:10px; color:hsl(var(--primary)); font-weight:600;">創會副會長</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        © 2024 全球健康音樂慈善總會 Global Health Music Charity Association. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
